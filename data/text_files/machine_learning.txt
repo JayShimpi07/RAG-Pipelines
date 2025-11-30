@@ -1,0 +1,15 @@
+ Machine Learning with Python
+    Python has become the go-to language for machine learning due to its simplicity and the availability of
+    powerful libraries such as TensorFlow, Keras, and Scikit-learn. These libraries provide tools for building and training machine learning models, making it easier for developers to implement complex algorithms.
+
+        Key Libraries:
+        - TensorFlow: An open-source library for numerical computation and machine learning.
+        - Keras: A high-level neural networks API that runs on top of TensorFlow.
+        - Scikit-learn: A library for simple and efficient tools for data mining and data analysis.
+        Applications:
+        - Image and speech recognition
+        - Natural language processing
+        - Predictive analytics
+        - Recommender systems
+        Python's role in machine learning continues to grow, with ongoing advancements in libraries and frameworks that enhance its capabilities in this field.
+        

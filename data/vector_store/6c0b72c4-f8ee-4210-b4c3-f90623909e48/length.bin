@@ -1,0 +1,10 @@
+ION : Inside-Outside Network
+Use multi-scale Conv features for inside region
+Use four direction RNN features for outside region
+ 
+Inside-Outside Net: Detecting Objects in Context with Skip Pooling and Recurrent Neural Networks
+Sean Bell, C.Lawrence Zitnick, Kavita Bala, Ross Girshick
+Cornell University, Microsoft Research
+CVPR 2016
+https://people.eecs.berkeley.edu/~rbg/papers/r-cnn-cvpr.pdfn.
+40"r

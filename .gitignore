@@ -1,0 +1,15 @@
+# Ignore secrets
+*.env
+src/.env
+
+# Ignore notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Ignore vector stores
+faiss_store/
+vectorstore/
+
+# Python cache
+__pycache__/
+*.pyc
+
