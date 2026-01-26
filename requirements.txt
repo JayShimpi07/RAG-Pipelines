@@ -1,0 +1,12 @@
+flask
+faiss-cpu
+sentence-transformers
+langchain-groq
+langchain-community
+python-dotenv
+pypdf
+unstructured
+openpyxl
+docx2txt
+numpy
+torch

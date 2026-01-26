@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAG AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🧠 RAG AI Assistant</h1>
+    <p>Ask questions from your documents with AI-powered search</p>
+</header>
+
+<div class="container">
+
+    <!-- Upload Card -->
+    <div class="card upload-card">
+        <h2>📄 Upload Documents</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data" class="form-row">
+            <input type="file" name="files" multiple required>
+            <button type="submit" class="btn primary">Upload & Index</button>
+        </form>
+    </div>
+
+    <!-- Ask Question -->
+    <div class="card">
+        <h2>❓ Ask Question</h2>
+        <form action="/ask" method="post" class="form-row">
+            <input type="text" name="question" placeholder="Ask something about your documents..." required>
+            <button type="submit" class="btn" onclick="this.innerText='Thinking...';">Ask</button>
+        </form>
+    </div>
+
+    {% if message %}
+    <div class="status success">{{ message }}</div>
+    {% endif %}
+
+    <!-- Answer -->
+    {% if answer %}
+    <div class="chat-container" id="answer-section">
+        <div class="chat-bubble ai">
+            <strong>AI Answer</strong>
+            <p>{{ answer }}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Sources -->
+    {% if sources %}
+    <div class="card">
+        <h3>📚 Sources Used</h3>
+        <ul class="sources">
+            {% for s in sources %}
+            <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+</div>
+
+{% if answer %}
+<script>
+  window.location.hash = "answer-section";
+</script>
+{% endif %}
+
+</body>
+</html>
