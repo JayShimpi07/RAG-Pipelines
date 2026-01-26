@@ -10,3 +10,4 @@ openpyxl
 docx2txt
 numpy
 torch
+gunicorn
