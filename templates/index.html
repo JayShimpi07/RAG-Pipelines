@@ -13,29 +13,53 @@
 
 <div class="container">
 
-    <!-- Upload Card -->
+    <!-- 📄 Upload Card -->
     <div class="card upload-card">
         <h2>📄 Upload Documents</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data" class="form-row">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="form-row"
+              onsubmit="showIngestion()">
             <input type="file" name="files" multiple required>
             <button type="submit" class="btn primary">Upload & Index</button>
         </form>
+
+        <!-- 🔄 INGESTION PIPELINE -->
+        <div id="ingestion-pipeline" class="pipeline hidden">
+            <div class="step">📂 Reading Files</div>
+            <div class="arrow"></div>
+            <div class="step">✂ Splitting into Chunks</div>
+            <div class="arrow"></div>
+            <div class="step">🧠 Creating Embeddings</div>
+            <div class="arrow"></div>
+            <div class="step">💾 Storing in Vector DB</div>
+        </div>
     </div>
 
-    <!-- Ask Question -->
+    <!-- ❓ Ask Question -->
     <div class="card">
         <h2>❓ Ask Question</h2>
-        <form action="/ask" method="post" class="form-row">
+        <form action="/ask" method="post" class="form-row"
+              onsubmit="showRetrieval()">
             <input type="text" name="question" placeholder="Ask something about your documents..." required>
-            <button type="submit" class="btn" onclick="this.innerText='Thinking...';">Ask</button>
+            <button type="submit" class="btn">Ask</button>
         </form>
+
+        <!-- 🔍 RETRIEVAL PIPELINE -->
+        <div id="retrieval-pipeline" class="pipeline hidden">
+            <div class="step">🔎 Understanding Question</div>
+            <div class="arrow"></div>
+            <div class="step">📡 Searching Vector DB</div>
+            <div class="arrow"></div>
+            <div class="step">📚 Fetching Relevant Chunks</div>
+            <div class="arrow"></div>
+            <div class="step">🤖 Generating Answer</div>
+        </div>
     </div>
 
     {% if message %}
     <div class="status success">{{ message }}</div>
     {% endif %}
 
-    <!-- Answer -->
+    <!-- 💬 Answer -->
     {% if answer %}
     <div class="chat-container" id="answer-section">
         <div class="chat-bubble ai">
@@ -45,7 +69,7 @@
     </div>
     {% endif %}
 
-    <!-- Sources -->
+    <!-- 📚 Sources -->
     {% if sources %}
     <div class="card">
         <h3>📚 Sources Used</h3>
@@ -64,6 +88,15 @@
   window.location.hash = "answer-section";
 </script>
 {% endif %}
+
+<script>
+function showIngestion() {
+    document.getElementById("ingestion-pipeline").classList.remove("hidden");
+}
+function showRetrieval() {
+    document.getElementById("retrieval-pipeline").classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
