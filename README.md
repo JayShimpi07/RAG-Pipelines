@@ -5,6 +5,8 @@ An end-to-end **Retrieval-Augmented Generation (RAG)** system that allows users 
 This project replicates the architecture behind modern AI tools like **ChatPDF, Perplexity AI, and enterprise knowledge assistants**.
 
 ---
+🎥 **Live Demo Video:**  
+👉 [Watch Project Demo](https://drive.google.com/file/d/1X2Z4zIo84fAWSYX0i3il8y4YbnWEDL7O/view?usp=sharing)
 
 ## 🚀 Key Features
 
